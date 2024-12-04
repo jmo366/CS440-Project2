@@ -1,0 +1,80 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Expense Dashboard</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <header>
+        <h1>Home Page</h1>
+    </header>
+
+    <div class="content">
+        <div class="summary">
+            <h2>Monthly Summary</h2>
+            <div class="summary-details">
+                <p>Total Spending: <span id="total-spending">$0.00</span></p>
+            </div>
+        </div>
+
+
+        <div class="expenses-section">
+            <h2>Expenses</h2>
+        
+            <div class="expenses-section">
+                <h3>Transportation</h3>
+                <div id="transportation-list" class="expenses">
+                </div>
+            </div>
+        
+            <div class="expenses-section">
+                <h3>Food</h3>
+                <div id="food-list" class="expenses">
+                </div>
+            </div>
+        
+            <div class="expenses-section">
+                <h3>Housing</h3>
+                <div id="housing-list" class="expenses">
+                </div>
+            </div>
+        
+            <div class="expenses-section">
+                <h3>Other</h3>
+                <div id="other-list" class="expenses">
+                </div>
+            </div>
+        </div>
+        
+
+        <div class="add-expense">
+            <h2>Add Expense</h2>
+            <form action="/api/expenses" method="POST">
+                <label for="category">Select Category:</label>
+                <select id="category" name="category">
+                    <option value="transportation">Transportation</option>
+                    <option value="food">Food</option>
+                    <option value="housing">Housing</option>
+                    <option value="other">Other</option>
+                </select>
+
+                <label for="amount">Expense Amount ($):</label>
+                <input type="number" id="amount" name="amount" placeholder="Enter amount">
+
+                <label for="date">Date:</label>
+                <input type="date" id="date" name="date">
+
+                <label for="description">Description (Optional):</label>
+                <input type="text" id="description" name="description" placeholder="Description">
+
+                <button type="submit">Add Expense</button>
+            </form>
+        </div>
+    </div>
+
+    <script src="app.js"></script>
+    
+</body>
+</html>
